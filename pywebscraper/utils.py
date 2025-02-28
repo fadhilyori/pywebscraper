@@ -61,3 +61,20 @@ def clear_directory_content(path: str):
             os.unlink(file_path)
         elif os.path.isdir(file_path):
             shutil.rmtree(file_path)
+
+def is_relative_url(url: str) -> bool:
+    """
+    Checks if the URL is relative.
+
+    Examples of
+        - /about
+        - #contact
+        - ?search=python
+
+    Args:
+        url (str): The URL to check.
+
+    Returns:
+        bool: True if the URL is internal, False otherwise.
+    """
+    return url.startswith("/") or url.startswith("#") or url.startswith("?")

@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 
 from pywebscraper.image import ImageContent
-from pywebscraper.utils import write_to_file, validate_url, clear_directory_content
+from pywebscraper.utils import write_to_file, validate_url, clear_directory_content, is_relative_url
 
 
 class PyWebScraper:
@@ -45,6 +45,15 @@ class PyWebScraper:
         self.url = url
         html = self._fetch_html()
         self._soup = BeautifulSoup(html, "html.parser")
+
+    def get_base_url(self) -> str:
+        """
+        Extracts the base URL from the full URL.
+
+        Returns:
+            str: The base URL.
+        """
+        return self.url.split("/")[2]
 
     def _fetch_html(self) -> str | None:
         """
@@ -89,6 +98,52 @@ class PyWebScraper:
             if img_url:
                 images.append((alt_text, img_url))
         return images
+
+    def _parse_internal_url(self, url: str) -> str:
+        """
+        Parses the internal URL.
+
+        Args:
+            url (str): The URL to parse.
+
+        Returns:
+            str: The parsed URL.
+        """
+        if url.startswith("/"):
+            return self.get_base_url() + url
+
+        # If the URL is relative, append the base URL
+        if not url.startswith("http"):
+            return self.url + url
+
+        return url
+
+
+    def extract_links(self, include_relative: bool = True) -> list:
+        """
+        Extracts links from the HTML content.
+
+        Args:
+            include_relative (bool): Whether to include relative links. Default is True.
+
+        Returns:
+            list: A list of links
+        """
+        links = []
+        for link in self._soup.find_all("a"):
+            link_url = link.get("href")
+
+            if link_url:
+                # Check if the URL is relative
+                if is_relative_url(link_url) and not include_relative:
+                    continue
+
+                # Check if the URL is relative
+                if is_relative_url(link_url):
+                    link_url = self._parse_internal_url(link_url)
+
+                links.append(link_url)
+        return links
 
     def get_images(self) -> Sequence[ImageContent]:
         """

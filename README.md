@@ -7,6 +7,8 @@ A simple web scraper that uses the BeautifulSoup library to scrape the web. This
 - Scrape a website content
 - Save to a file in Markdown or HTML format
 - Image download support
+- Get all images links in the website content
+- Get all links in the website content with or without the relative links
 
 ## Dependencies
 
@@ -64,4 +66,74 @@ scraper.save_content_html(filename='content.html')
 ```python
 output_file = 'output.md'
 scraper.save_markdown(filename=output_file, download_images=True)
+```
+
+### Get the website Markdown content in a string
+
+```python
+content = scraper.get_content_markdown()
+print(content)
+```
+
+Example output:
+
+```markdown
+# Example Domain
+
+This domain is for use in illustrative examples in documents. You may use this
+domain in literature without prior coordination or asking for permission.
+
+[More information...](https://www.iana.org/domains/example)
+```
+
+### Get all images in the website content
+
+```python
+images = scraper.extract_images()
+print(images)
+```
+
+Example output:
+
+```python
+[
+    ('alt_text1', 'https://www.example.com/image1.jpg'),
+    ('alt_text2', 'https://www.example.com/image2.jpg'),
+]
+```
+
+### Get all the links in the content (including the relative links)
+
+```python
+links = scraper.extract_links()
+print(links)
+```
+
+Example output:
+
+```python
+[
+    # External links
+    'https://www.example.org/about',
+
+    # Relative links
+    'https://www.example.com/page3',    # original: /page3
+    'https://www.example.com/#section', # original: # #section
+    'https://www.example.com/?search=python', # original: # ?search=python
+]
+```
+
+### Get all the links in the content (exclude the relative links)
+
+```python
+links = scraper.extract_links(include_relative=False)
+print(links)
+```
+
+Example output:
+
+```python
+[
+    'https://www.example.org/about',
+]
 ```
