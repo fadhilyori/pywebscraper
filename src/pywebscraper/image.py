@@ -4,7 +4,7 @@ from typing import Any
 
 import requests
 
-from pywebscraper.utils import validate_url
+from src.pywebscraper.utils import validate_url
 
 
 @dataclass
