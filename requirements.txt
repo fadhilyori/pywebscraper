@@ -16,6 +16,8 @@ bumpver==2024.1130
     # via pywebscraper (pyproject.toml)
 certifi==2025.1.31
     # via requests
+cffi==1.17.1
+    # via cryptography
 charset-normalizer==3.4.1
     # via requests
 click==8.1.8
@@ -25,23 +27,52 @@ click==8.1.8
     #   pip-tools
 colorama==0.4.6
     # via bumpver
+cryptography==44.0.1
+    # via secretstorage
+docutils==0.21.2
+    # via readme-renderer
+id==1.5.0
+    # via twine
 idna==3.10
     # via requests
 iniconfig==2.0.0
     # via pytest
 isort==6.0.1
     # via pywebscraper (pyproject.toml)
+jaraco-classes==3.4.0
+    # via keyring
+jaraco-context==6.0.1
+    # via keyring
+jaraco-functools==4.1.0
+    # via keyring
+jeepney==0.9.0
+    # via
+    #   keyring
+    #   secretstorage
+keyring==25.6.0
+    # via twine
 lexid==2021.1006
     # via bumpver
+markdown-it-py==3.0.0
+    # via rich
 markdownify==1.0.0
     # via pywebscraper (pyproject.toml)
+mdurl==0.1.2
+    # via markdown-it-py
+more-itertools==10.6.0
+    # via
+    #   jaraco-classes
+    #   jaraco-functools
 mypy-extensions==1.0.0
     # via black
+nh3==0.2.21
+    # via readme-renderer
 packaging==24.2
     # via
     #   black
     #   build
     #   pytest
+    #   twine
 pathspec==0.12.1
     # via black
 pip-tools==7.4.1
@@ -50,24 +81,48 @@ platformdirs==4.3.6
     # via black
 pluggy==1.5.0
     # via pytest
+pycparser==2.22
+    # via cffi
+pygments==2.19.1
+    # via
+    #   readme-renderer
+    #   rich
 pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
 pytest==8.3.4
     # via pywebscraper (pyproject.toml)
+readme-renderer==44.0
+    # via twine
 requests==2.32.3
-    # via pywebscraper (pyproject.toml)
+    # via
+    #   id
+    #   pywebscraper (pyproject.toml)
+    #   requests-toolbelt
+    #   twine
+requests-toolbelt==1.0.0
+    # via twine
+rfc3986==2.0.0
+    # via twine
+rich==13.9.4
+    # via twine
+secretstorage==3.3.3
+    # via keyring
 six==1.17.0
     # via markdownify
 soupsieve==2.6
     # via beautifulsoup4
 toml==0.10.2
     # via bumpver
+twine==6.1.0
+    # via pywebscraper (pyproject.toml)
 typing-extensions==4.12.2
     # via beautifulsoup4
 urllib3==2.3.0
-    # via requests
+    # via
+    #   requests
+    #   twine
 wheel==0.45.1
     # via pip-tools
 
