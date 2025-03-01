@@ -5,8 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 
-from src.pywebscraper.image import ImageContent
-from src.pywebscraper.utils import write_to_file, validate_url, clear_directory_content, is_relative_url
+from pywebscraper.image import ImageContent
+from pywebscraper.utils import write_to_file, validate_url, clear_directory_content, is_relative_url
 
 
 class PyWebScraper:
