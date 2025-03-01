@@ -10,6 +10,10 @@ A simple web scraper that uses the BeautifulSoup library to scrape the web. This
 - Get all images links in the website content
 - Get all links in the website content with or without the relative links
 
+## Requirements
+
+- Python 3.10+
+
 ## Installation
 
 To install the package, run the following command:
