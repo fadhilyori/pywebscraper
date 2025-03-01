@@ -49,13 +49,6 @@ push = true
 # ]
 "src/pywebscraper/__init__.py" = ["{version}"]
 
-[tool.setuptools]
-package-dir = { "" = "src" }
-
-[tool.setuptools.packages.find]
-where = "src"
-include = ["pywebscraper"]
-
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
