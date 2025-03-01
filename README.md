@@ -15,7 +15,7 @@ A simple web scraper that uses the BeautifulSoup library to scrape the web. This
 To install the package, run the following command:
 
 ```bash
-pip install pywebscraper
+pip install git+https://github.com/fadhilyori/pywebscraper.git
 ```
 
 ## Usage
