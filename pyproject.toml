@@ -16,9 +16,9 @@ classifiers = [
 ]
 keywords = ["webscraper", "webscraping", "webscraping-beautifulsoup", "beautifulsoup"]
 dependencies = [
-    "beautifulsoup4 >= 4.9.3",
-    "requests >= 2.25.1",
-    "markdownify >= 0.9.2",
+    "beautifulsoup4",
+    "requests",
+    "markdownify",
 ]
 requires-python = ">=3.6"
 
