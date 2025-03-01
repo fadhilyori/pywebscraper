@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pywebscraper"
-version = "0.1.5"
+version = "0.1.6"
 description = "A simple web scraper that uses the BeautifulSoup library to scrape the web."
 readme = "README.md"
 authors = [{ name = "Fadhil Yori", email = "me@fadhilyori.my.id" }]
@@ -30,7 +30,7 @@ dev = ["black", "bumpver", "isort", "pip-tools", "pytest", "twine"]
 Homepage = "https://github.com/fadhilyori/pywebscraper"
 
 [tool.bumpver]
-current_version = "0.1.5"
+current_version = "0.1.6"
 version_pattern = "MAJOR.MINOR.PATCH[PYTAGNUM]"
 commit_message = "bump version {old_version} -> {new_version}"
 tag_message = "{new_version}"
