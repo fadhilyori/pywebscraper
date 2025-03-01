@@ -23,7 +23,7 @@ pip install pywebscraper
 ### Initialize the PyWebScraper class
 
 ```python
-from src.pywebscraper import PyWebScraper
+from pywebscraper import PyWebScraper
 
 url = 'https://www.example.com'
 
