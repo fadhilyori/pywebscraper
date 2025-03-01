@@ -10,26 +10,12 @@ A simple web scraper that uses the BeautifulSoup library to scrape the web. This
 - Get all images links in the website content
 - Get all links in the website content with or without the relative links
 
-## Dependencies
-
-All dependencies are listed in the requirements.txt file. To install them, run the following command:
-
-```bash
-pip install -r requirements.txt
-```
-
-List of dependencies:
-
-- beautifulsoup4
-- requests
-- markdownify
-
 ## Installation
 
 To install the package, run the following command:
 
 ```bash
-pip install .
+pip install pywebscraper
 ```
 
 ## Usage
@@ -37,7 +23,7 @@ pip install .
 ### Initialize the PyWebScraper class
 
 ```python
-from pywebscraper import PyWebScraper
+from src.pywebscraper import PyWebScraper
 
 url = 'https://www.example.com'
 
@@ -137,3 +123,7 @@ Example output:
     'https://www.example.org/about',
 ]
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
