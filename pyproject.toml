@@ -7,7 +7,7 @@ name = "pywebscraper"
 version = "0.1.2"
 description = "A simple web scraper that uses the BeautifulSoup library to scrape the web."
 readme = "README.md"
-authors = [{ name = "PyWebScraper", email = "me@fadhilyori.my.id" }]
+authors = [{ name = "Fadhil Yori", email = "me@fadhilyori.my.id" }]
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: MIT License",
@@ -16,7 +16,7 @@ classifiers = [
 ]
 keywords = ["webscraper", "webscraping", "webscraping-beautifulsoup", "beautifulsoup"]
 dependencies = [
-    "beautifulsoup4",
+    "beautifulsoup4>=4.13.0",
     "requests",
     "markdownify",
 ]
