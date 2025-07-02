@@ -119,7 +119,7 @@ twine==6.1.0
     # via pywebscraper (pyproject.toml)
 typing-extensions==4.12.2
     # via beautifulsoup4
-urllib3==2.3.0
+urllib3==2.5.0
     # via
     #   requests
     #   twine
