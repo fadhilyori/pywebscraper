@@ -27,7 +27,7 @@ click==8.1.8
     #   pip-tools
 colorama==0.4.6
     # via bumpver
-cryptography==44.0.1
+cryptography==46.0.5
     # via secretstorage
 docutils==0.21.2
     # via readme-renderer
